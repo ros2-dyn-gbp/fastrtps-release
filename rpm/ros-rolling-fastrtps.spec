@@ -87,6 +87,7 @@ internals.
 
 %install
 %cmake_install
+install -m0644 -p -D package.xml %{buildroot}%{bloom_prefix}/share/%{pkg_name}/package.xml
 
 
 %if 0%{?with_tests}
