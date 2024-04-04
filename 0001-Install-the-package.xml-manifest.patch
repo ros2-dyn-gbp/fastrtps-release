@@ -1,0 +1,24 @@
+From 57808ae9e96084a88c55f669abe71492478baf80 Mon Sep 17 00:00:00 2001
+From: Scott K Logan <logans@cottsay.net>
+Date: Fri, 22 Mar 2024 20:42:47 -0500
+Subject: [PATCH] Install the package.xml manifest
+
+---
+ rpm/ros-rolling-fastrtps.spec | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/rpm/ros-rolling-fastrtps.spec b/rpm/ros-rolling-fastrtps.spec
+index c5efbd158033..a99f0ab004fe 100644
+--- a/rpm/ros-rolling-fastrtps.spec
++++ b/rpm/ros-rolling-fastrtps.spec
+@@ -90,6 +90,7 @@ internals.
+ 
+ %install
+ %cmake_install
++install -m0644 -p -D package.xml %{buildroot}%{bloom_prefix}/share/%{pkg_name}/package.xml
+ 
+ 
+ %if 0%{?with_tests}
+-- 
+2.44.0
+
